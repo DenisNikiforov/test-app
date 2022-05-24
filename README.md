@@ -1,2 +1,2 @@
 # unsocial-app
-GitHub repository for the social media app Unsocial
+GitHub repository for Dependency bots testing
