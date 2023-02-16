@@ -19,7 +19,7 @@ module.exports = {
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'no-underscore-dangle': ['error', { allow: ['_id', '_update'] }],
-    'class-methods-use-this': 'off',
+    'class-methods-use-this': 'on',
     '@typescript-eslint/no-non-null-assertion': 'off',
   },
 };
