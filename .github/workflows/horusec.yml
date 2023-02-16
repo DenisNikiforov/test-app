@@ -1,14 +1,22 @@
-name: Horusec
+name: Horusec Scan
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
 
 jobs:
-  horusec:
+  horusec-scan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Install Horusec
-        run: curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/master/scripts/install.sh | bash
       - name: Run Horusec
-        run: horusec start -p .
+        uses: docker://horuszup/horusec-cli:v2.4.2
+        with:
+          args: |
+            horusec start -p /github/workspace -e "json" -o "/github/workspace/horusec-result.json" -x ".horusec/config.json"
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        id: horusec
+      - name: Print output
+        run: echo "${{ steps.horusec.outputs.result }}"
