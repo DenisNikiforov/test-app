@@ -31,8 +31,8 @@
     "express-async-errors": "3.1.1",
     "express-validator": "6.9.2",
     "mongodb-memory-server": "6.9.3",
-    "mongoose": "5.11.15",
-    "nodemailer": "6.4.17",
+    "mongoose": "5.13.9",
+    "nodemailer": "6.6.1",
     "nodemon": "2.0.7",
     "ts-node": "9.1.1",
     "typescript": "4.1.3"
